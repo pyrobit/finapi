@@ -3,8 +3,8 @@
 
 ## Requirements
 
-- [] Must be possible to create an account
-- [] Must be possible search for clients bank statement
+- [x] Must be possible to create an account
+- [x] Must be possible search for clients bank statement
 - [] Must be possible to make a deposit
 - [] Must be possible to make a withdraw
 - [] Must be possible search client's bank statement by date range
@@ -15,9 +15,9 @@
 
 ## Business Rules
 
-- [] Shaw not be possible to create account if an accout exists with same CPF
+- [x] Shaw not be possible to create account if an accout exists with same CPF
+- [x] Shaw not be possible to search bank statement from unexistent account
 - [] Shaw not be possible to make deposit in account that doesn't already exists
-- [] Shaw not be possible to search bank statement from unexistent account
 - [] Shaw not be possible to make withdraw from unexistent account
 - [] Shaw not be possible to exclude an unexistent account
 - [] Shaw not be possible to withdraw with insufficient balance
