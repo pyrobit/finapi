@@ -10,7 +10,8 @@
 - [x] Must be possible search client's bank statement by date 
 - [x] Must be possible to update client account data
 - [x] Must be possible get client account data
-- [] Must be possible to delete an account
+- [x] Must be possible to delete an account
+- [x] Must be possible to return balance
 
 
 ## Business Rules
@@ -20,6 +21,6 @@
 - [x] Shaw not be possible to make deposit in account that doesn't already exists
 - [x] Shaw not be possible to make withdraw from unexistent account
 - [x] Shaw not be possible to withdraw with insufficient balance
-- [] Shaw not be possible to exclude an unexistent account
+- [x] Shaw not be possible to exclude an unexistent account
 
 

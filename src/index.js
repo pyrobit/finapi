@@ -175,4 +175,23 @@ app.get('/account', verifyIfExistsAccountCPF,(request, response) => {
 
 });
 
+// delete account
+app.delete('/account', verifyIfExistsAccountCPF, (request, response) => {
+    const { customer} = request;
+
+    // splice
+    customers.splice(customer, 1); // removes only the position where customer is
+
+    return response.status(204).json(customers);
+
+});
+
+// return balance
+app.get('/balance', verifyIfExistsAccountCPF, (request,response) => {
+    const { customer } = request;
+    const balance = getBalance(customer.statement);
+
+    return response.json(balance);
+});
+
 app.listen(3333);
