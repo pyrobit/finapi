@@ -47,6 +47,7 @@ function getBalance(statement) {
  * id -uuid
  * statement[]
  */
+// create account
 app.post('/account', (request, response) => {
     const {cpf, name} = request.body;
 
@@ -78,6 +79,7 @@ app.post('/account', (request, response) => {
 });
 
 
+// get statement
 app.get('/statement', verifyIfExistsAccountCPF, (request, response) => {
     const { cpf } = request.headers;
     const { customer } = request;  // receive customer ffrom middleware verifyIfExistsAccountCPF
@@ -137,7 +139,7 @@ app.post('/withdraw', verifyIfExistsAccountCPF,(request,response) => {
 
 });
 
-
+// Statement by date
 app.get('/statement/date', verifyIfExistsAccountCPF, (request, response) => {
     const { customer } = request;  // receive customer ffrom middleware verifyIfExistsAccountCPF
     const { date } = request.query;
@@ -156,5 +158,21 @@ console.log(dateFormat);
     );
 });
 
+// update account
+app.put('/account', verifyIfExistsAccountCPF, (request, response) => {
+    const { name } = request.body; 
+    const { customer } = request;
+
+    customer.name = name;
+
+    return response.status(201).send();
+});
+
+// get account data
+app.get('/account', verifyIfExistsAccountCPF,(request, response) => {
+    const { customer} = request;
+    return response.json(customer);
+
+});
 
 app.listen(3333);

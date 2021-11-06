@@ -8,8 +8,8 @@
 - [x] Must be possible to make a deposit
 - [x] Must be possible to make a withdraw
 - [x] Must be possible search client's bank statement by date 
-- [] Must be possible to update client account data
-- [] Must be possible get client account data
+- [x] Must be possible to update client account data
+- [x] Must be possible get client account data
 - [] Must be possible to delete an account
 
 
