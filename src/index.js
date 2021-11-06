@@ -150,8 +150,7 @@ console.log(dateFormat);
             new Date(dateFormat).toDateString() 
     );
 
-    console.log("statement: ", statement);
-    // console.log("customer.statement: ", customer.statement);
+
     return response.json(
         statement        
     );
