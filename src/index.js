@@ -138,4 +138,24 @@ app.post('/withdraw', verifyIfExistsAccountCPF,(request,response) => {
 });
 
 
+app.get('/statement/date', verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;  // receive customer ffrom middleware verifyIfExistsAccountCPF
+    const { date } = request.query;
+
+    const dateFormat = new Date(date + " 00:00"); // hack to enable search by Day
+console.log(dateFormat);
+    const statement = customer.statement.filter(
+        (statement) => 
+            statement.created_at.toDateString() === 
+            new Date(dateFormat).toDateString() 
+    );
+
+    console.log("statement: ", statement);
+    // console.log("customer.statement: ", customer.statement);
+    return response.json(
+        statement        
+    );
+});
+
+
 app.listen(3333);
